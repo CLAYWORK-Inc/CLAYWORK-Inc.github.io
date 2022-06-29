@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+:root {
+  --line-height: 1.62;
+  --line-margin: 0.31;
+  --v-margin: 4.24rem;
+  --v-margin-half: calc(var(--v-margin) * 0.5);
+  --v-section-margin: 1.38rem;
+  --v-section-width-1: calc(29.03rem * 2 + 4.24rem);
+  --v-section-width-2: 29.03rem;
+  --v-dt-width: 23.6%;
+}
+
+@media screen and (max-width: calc((29.03rem * 2 + 4.24rem * 3) * 2)) {
+  :root {
+    --v-section-width-1: 100%;
+  }
+}
+
+@media screen and (max-width: calc(29.03rem * 2 + 4.24rem * 3)) {
+  :root {
+    --v-section-width-2: 100%;
+  }
+}
+
+@media screen and (max-width: 35rem) {
+  :root {
+    --v-margin: 1.62rem;
+    --v-dt-width: 7em;
+  }
+}
+
+* {
+ font-family: 'Noto Sans JP', sans-serif; 
+ font-weight: 300;
+ line-height: var(--line-height);
+ margin: 0;
+ padding: 0;
+}
+
+body {
+  background-color: gray;
+  padding-bottom: var(--v-margin);
+}
+
+div {
+  padding: 0 var(--v-margin);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+}
+
+header { padding-top: var(--v-margin); }
+header div { padding-top: 2.38em; }
+header h1 { margin-bottom: -0.298%; }
+header section { margin: 0; }
+
+footer {
+  padding: var(--v-margin) 0;
+  background-color: white;
+}
+footer p {
+  text-align: center;
+  margin: 0;
+}
+
+section {
+  margin-top: 1.38rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: calc(50% - var(--v-margin-half));
+  min-width: var(--v-section-width-1);
+}
+
+section section {
+  display: block;
+  min-width: var(--v-section-width-2);
+}
+
+section section section {
+}
+
+h1 img { fill: white; };
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+  margin-top: calc(0.38em + 0.19em);
+  margin-bottom: -0.19em;
+  text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: 500; }
+h1 { font-size: 1.62rem }
+h2 { font-size: 1.38rem }
+h3 { font-size: 1.23rem }
+h4 { font-size: 1.13rem }
+h5 { font-size: 1.09rem }
+h6 { font-size: 1.03rem }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+th { width: 23.6%; text-align-last: justify; }
+th, td { border: 1px solid black; padding: 0.38em; }
+dl { font-size: 0.93rem; border: 1px solid black; padding: 0.38em 0.62em; }
+dt { float: left; clear: left; width: var(--v-dt-width); }
+dd { margin-left: var(--v-dt-width); }
+img { vertical-align: bottom; }
+
