@@ -5,8 +5,10 @@
   --line-margin: 0.31;
   --margin: 5.28rem;/*4.76vw;*//*4.24rem;*/
   --margin-half: calc(var(--margin) * 0.5);
+  --body-margin: 5.28rem;
   --section-margin: 1.38rem;
   --section-margin-child: 1rem;
+  --section-margin-marged: calc(var(--section-margin) + var(--section-margin-child));
   --section-width: calc(29.03rem * 2 + 4.24rem);
   --section-width-child: 29.03rem;
   --dt-width: 23.6%;
@@ -32,36 +34,48 @@
 }
 
 * {
- font-family: 'Noto Sans JP', sans-serif; 
- font-weight: 300;
- line-height: var(--line-height);
- margin: 0;
- padding: 0;
+  font-family: 'Noto Sans JP', sans-serif; 
+  font-weight: 300;
+  line-height: var(--line-height);
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+  margin: 0;
+  padding: 0;
+  margin-top: calc(0.13em + 0.19em);
+  margin-bottom: -0.19em;
+  text-align: justify;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: gray;
-  padding: calc(var(--section-margin) * 3.62) 0;
+  padding: var(--body-margin) 0;
+}
+
+header {
+  padding-top: var(--section-margin-marged);
+}
+header h1 {
+  margin-bottom: -0.33%;
 }
 
 main {
-  padding: calc(var(--section-margin) * 3.62) var(--margin);
+  padding: var(--body-margin) var(--margin);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: white;
 }
 
-header {
-  padding-top: calc(var(--section-margin) + var(--section-margin-child));
-}
-header h1 {
-  margin-bottom: -0.33%;
+div {
+  margin-bottom: var(--section-margin-marged);
 }
 
 footer {
   color: white;
-  padding: calc(var(--section-margin));
+  padding: calc(var(--section-margin-marged));
 }
 footer p {
   text-align: center;
