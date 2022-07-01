@@ -70,6 +70,7 @@ main {
 }
 
 div {
+  width: 100%;
   margin-bottom: var(--section-margin-marged);
 }
 
