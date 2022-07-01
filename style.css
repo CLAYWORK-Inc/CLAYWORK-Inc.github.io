@@ -3,30 +3,31 @@
 :root {
   --line-height: 1.62;
   --line-margin: 0.31;
-  --v-margin: 4.24rem;
-  --v-margin-half: calc(var(--v-margin) * 0.5);
-  --v-section-margin: 1.38rem;
-  --v-section-width-1: calc(29.03rem * 2 + 4.24rem);
-  --v-section-width-2: 29.03rem;
-  --v-dt-width: 23.6%;
+  --margin: 5.28rem;/*4.76vw;*//*4.24rem;*/
+  --margin-half: calc(var(--margin) * 0.5);
+  --section-margin: 1.38rem;
+  --section-margin-child: 1rem;
+  --section-width: calc(29.03rem * 2 + 4.24rem);
+  --section-width-child: 29.03rem;
+  --dt-width: 23.6%;
 }
 
 @media screen and (max-width: calc((29.03rem * 2 + 4.24rem * 3) * 2)) {
   :root {
-    --v-section-width-1: 100%;
+    --section-width: 100%;
   }
 }
 
 @media screen and (max-width: calc(29.03rem * 2 + 4.24rem * 3)) {
   :root {
-    --v-section-width-2: 100%;
+    --section-width-child: 100%;
   }
 }
 
 @media screen and (max-width: 35rem) {
   :root {
-    --v-margin: 1.62rem;
-    --v-dt-width: 7em;
+    --margin: 1.62rem;
+    --dt-width: 7em;
   }
 }
 
@@ -40,46 +41,52 @@
 
 body {
   background-color: gray;
-  padding-bottom: var(--v-margin);
+  padding: calc(var(--section-margin) * 3.62) 0;
 }
 
-div {
-  padding: 0 var(--v-margin);
+main {
+  padding: calc(var(--section-margin) * 3.62) var(--margin);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: white;
 }
 
-header { padding-top: var(--v-margin); }
-header div { padding-top: 2.38em; }
-header h1 { margin-bottom: -0.298%; }
-header section { margin: 0; }
+header {
+  padding-top: calc(var(--section-margin) + var(--section-margin-child));
+}
+header h1 {
+  margin-bottom: -0.33%;
+}
 
 footer {
-  padding: var(--v-margin) 0;
-  background-color: white;
+  color: white;
+  padding: calc(var(--section-margin));
 }
 footer p {
   text-align: center;
-  margin: 0;
 }
 
 section {
-  margin-top: 1.38rem;
+  margin-top: var(--section-margin);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  flex-basis: calc(50% - var(--v-margin-half));
-  min-width: var(--v-section-width-1);
+  flex-basis: calc(50% - var(--margin-half));
+  min-width: var(--section-width);
+}
+
+section:last-child {
+  margin-bottom: var(--section-margin);
 }
 
 section section {
   display: block;
-  min-width: var(--v-section-width-2);
+  min-width: var(--section-width-child);
 }
 
-section section section {
+section section:last-child {
+  margin-bottom: var(--section-margin-child);
 }
 
 h1 img { fill: white; };
@@ -102,7 +109,7 @@ table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
 th { width: 23.6%; text-align-last: justify; }
 th, td { border: 1px solid black; padding: 0.38em; }
 dl { font-size: 0.93rem; border: 1px solid black; padding: 0.38em 0.62em; }
-dt { float: left; clear: left; width: var(--v-dt-width); }
-dd { margin-left: var(--v-dt-width); }
+dt { float: left; clear: left; width: var(--dt-width); }
+dd { margin-left: var(--dt-width); }
 img { vertical-align: bottom; }
 
