@@ -24,6 +24,8 @@
   :root {
     --section-width-child: 100%;
   }
+  /* A narrow column of justified English opens wide gaps between words */
+  p:lang(en) { text-align: left; }
 }
 
 @media screen and (max-width: 35rem) {
@@ -112,7 +114,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
   text-align: justify;
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: 500; }
+h1, h2, h3, h4, h5, h6 { font-weight: 500; text-align: left; }
 h1 { font-size: 1.62rem }
 h2 { font-size: 1.38rem }
 h3 { font-size: 1.23rem }
