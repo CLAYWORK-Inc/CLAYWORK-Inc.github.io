@@ -125,6 +125,7 @@ th { width: 23.6%; text-align-last: justify; }
 th, td { border: 1px solid black; padding: 0.38em; }
 dl { font-size: 0.93rem; border: 1px solid black; padding: 0.38em 0.62em; }
 dt { float: left; clear: left; width: var(--dt-width); }
-dd { margin-left: var(--dt-width); }
+dd { margin-left: var(--dt-width); text-align: left; }
+dd span { display: inline-block; }  /* Address parts: wrap between them, inside one only when it is wider than the line */
 img { vertical-align: bottom; }
 
